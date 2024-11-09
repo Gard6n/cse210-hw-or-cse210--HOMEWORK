@@ -16,8 +16,11 @@ class Program
        Console.Write("Enter a number: ");
        string NUM = Console.ReadLine();
         yee = int.Parse(NUM);
+        if (yee != 0){
         numbs.Add(yee);
         counter++;
+        }
+        
      } while(yee > 0);
 
     int sum = numbs.Sum();
