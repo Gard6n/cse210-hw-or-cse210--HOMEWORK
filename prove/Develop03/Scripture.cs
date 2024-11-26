@@ -25,11 +25,13 @@ public class Scripture
 
     public string GetDisplayText()
     {
+        string text = "";
         foreach (var word in _words)
         {
-            word.GetDisplaytext();
+             text = String.Concat(word.GetDisplaytext());
         }
-        return _reference.GetDisplayText();
+        text = text.Trim();
+        return text;
     }
 
     public bool IsCompetelyHidden()

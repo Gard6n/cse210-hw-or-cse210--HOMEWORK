@@ -8,9 +8,9 @@ class Program
         Scripture scripture = new(reff,"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
         Random rnd = new();
         List<int> numlist = new List<int>();
-        foreach (var i in Enumerable.Range(1, 25))
+        for(int i = 0; i < 24; i++)
         {
-           numlist.Add(rnd.Next(i));
+           numlist.Add(i);
         }
 
         Console.WriteLine("Welcome to Scripture Mastery");
@@ -18,17 +18,17 @@ class Program
         while (!scripture.IsCompetelyHidden())
         {
             int rand = rnd.Next(numlist.Count);
-            scripture.GetDisplayText();
-            scripture.HideRandomWords(rand);
-            scripture.GetDisplayText();
-            numlist.RemoveAt(rand);
+            Console.WriteLine(reff.GetDisplayText());
+            Console.WriteLine(scripture.GetDisplayText());
             
+            Console.ReadLine();
+            scripture.HideRandomWords(rand);
+            Console.Clear();
+            Console.WriteLine(scripture.GetDisplayText());
+            
+            numlist.Remove(rand);
+            scripture.IsCompetelyHidden();
         }
-        
-   
-       
-       
-
-
+        Console.WriteLine("Program Finished");
     }
 }
