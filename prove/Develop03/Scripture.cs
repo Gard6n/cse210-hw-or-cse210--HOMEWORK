@@ -2,7 +2,7 @@
 
 public class Scripture
 {
-    private Reference _reference{get;set;}
+    private Reference _reference;
     private List<Word> _words = new List<Word>();
 
     public Scripture(Reference refer, string text){
@@ -13,18 +13,23 @@ public class Scripture
         {
             _words.Add(new Word(word1));
         }
-            
     }
 
     public void HideRandomWords(int numberToHide){
-
-
+        
+      if (numberToHide <= _words.Count)
+      {
+          _words[numberToHide].Hide();
+      }
     }
 
     public string GetDisplayText()
     {
-
-        return "";
+        foreach (var word in _words)
+        {
+            word.GetDisplaytext();
+        }
+        return _reference.GetDisplayText();
     }
 
     public bool IsCompetelyHidden()
