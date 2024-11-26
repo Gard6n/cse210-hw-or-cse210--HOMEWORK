@@ -1,48 +1,41 @@
 ﻿using System.Globalization;
 using CsvHelper;
+using CsvHelper.Configuration;
 
 namespace Develop03;
 
 public class Reference
 {
-    private string _book;
-    private int _chapter;
-    private int _verse ;
-    private int _endVerse;
-    private string _csvpath;
+    private string _book{get;set;}
+    private int _chapter{get;set;}
+    private int _verse {get;set;}
+    private int _endVerse{get;set;}
     
     
-    
-    public void BibleLoad()
+    public Reference(string book, int chapter, int verse){
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = -1;
+
+    }
+
+    public Reference(string book, int chapter, int startVerse, int endVerse){
+        _book = book;
+        _chapter = chapter;
+        _verse = startVerse;
+        _endVerse = endVerse;
+
+    }
+
+    public string GetDisplayText()
     {
-        try
+        if (_endVerse == -1)
         {
-            if (File.Exists(_csvpath))
-            {
-                using (var reader = new StreamReader(_csvpath))
-                using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
-                {
-                    var records = csv.GetRecord<Reference>();
-                }
-            }
+            return $"{_book} {_chapter}:{_verse}";
         }
-        catch (FileNotFoundException)
-        {
-            Console.WriteLine("File not found");
-        }
-    }
-
-    public void Reference1(string book, int chapter, int verse){
-
-    }
-
-    public void Reference2(string book, int chapter, int startVerse, int endVerse){
-
-    }
-
-    public string GetDisplayText(){
-
-        return "";
+        else 
+        return $"{_book} {_chapter}:{_verse}-{_endVerse}";
     }
 
     //This is put first in program.cs to declare the variables
@@ -52,8 +45,15 @@ public class Reference
         _book = "";
         _chapter = 0;
         _verse = 0;
-        _endVerse = 0;
-        _csvpath = Path.Combine(Environment.CurrentDirectory, "kjv.csv");
+        _endVerse = -1;
+    }
+
+    public void Setter(string book, int chapter, int verse, int endVerse)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verse = verse;
+        _endVerse = endVerse;
     }
     
 }

@@ -2,12 +2,18 @@
 
 public class Scripture
 {
-    private Reference _reference = new();
-    private List<Word> Words = new List<Word>();
+    private Reference _reference{get;set;}
+    private List<Word> _words = new List<Word>();
 
-    public void Scripture1(Reference reference, string text){
+    public Scripture(Reference refer, string text){
+        _reference = refer;
+        string[] words = text.Split(' ');
 
-
+        foreach (var word1 in words)
+        {
+            _words.Add(new Word(word1));
+        }
+            
     }
 
     public void HideRandomWords(int numberToHide){
@@ -21,10 +27,17 @@ public class Scripture
         return "";
     }
 
-    public bool IsCompletelyHidden()
+    public bool IsCompetelyHidden()
     {
-
-        return true;
+        bool hidden = true;
+        foreach (var word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                hidden = false;
+                break;
+            }
+        }
+        return hidden;
     }
-
 }

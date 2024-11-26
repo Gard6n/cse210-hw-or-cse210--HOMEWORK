@@ -4,15 +4,17 @@ class Program
 {
     static void Main(string[] args)
     {
-        Reference _reference = new();
+        Reference reff = new("john",3,4);
+        Scripture scripture = new(reff,"For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.");
         
-        _reference.Getter();
         
         Console.WriteLine("Welcome to Scripture Mastery");
-        
-        _reference.BibleLoad();
 
-        Console.ReadLine();
+        while (!scripture.IsCompetelyHidden())
+        {
+            
+            
+        }
         
    
        
