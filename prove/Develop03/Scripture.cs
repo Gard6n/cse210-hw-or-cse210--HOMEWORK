@@ -25,13 +25,12 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        string text = "";
+        string fulltext = _reference.GetDisplayText();
         foreach (var word in _words)
         {
-             text = String.Concat(word.GetDisplaytext());
+             fulltext += " " + String.Concat(word.GetDisplaytext());
         }
-        text = text.Trim();
-        return text;
+        return fulltext;
     }
 
     public bool IsCompetelyHidden()
@@ -46,5 +45,10 @@ public class Scripture
             }
         }
         return hidden;
+    }
+
+    public int GetNumberOfWords()
+    {
+        return _words.Count;
     }
 }

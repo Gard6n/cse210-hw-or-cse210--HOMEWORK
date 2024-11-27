@@ -11,15 +11,8 @@ public class Reference
     private int _verse {get;set;}
     private int _endVerse{get;set;}
     
-    public Reference(string book, int chapter, int verse){
-        _book = book;
-        _chapter = chapter;
-        _verse = verse;
-        _endVerse = -1;
-
-    }
-
-    public Reference(string book, int chapter, int startVerse, int endVerse){
+   
+    public Reference(string book, int chapter, int startVerse, int endVerse = -1){
         _book = book;
         _chapter = chapter;
         _verse = startVerse;
