@@ -15,19 +15,17 @@ class Program
         }
         
         Console.WriteLine("Welcome to Scripture Mastery");
-        
-        Console.Write(reff.GetDisplayText(),' ');
         Console.WriteLine(scripture.GetDisplayText());
 
         while (!scripture.IsCompetelyHidden())
         {
-            int rand = rnd.Next(0 ,numlist.Count);
+            int rand = rnd.Next(0,numlist.Count);
+            int temp = numlist[rand];
             Console.ReadLine();
-            scripture.HideRandomWords(rand);
+            scripture.HideRandomWords(temp);
             Console.Clear();
-            Console.Write(reff.GetDisplayText(),"  :");
             Console.WriteLine(scripture.GetDisplayText());
-            numlist.Remove(rand);
+            numlist.Remove(temp);
             
             scripture.IsCompetelyHidden();
         }
