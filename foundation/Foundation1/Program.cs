@@ -1,9 +1,14 @@
-using System;
+namespace Foundation1;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Comment Com = new();
+        Video Vid = new();
+        Video Vid2 = new();
+
+
+
     }
 }
