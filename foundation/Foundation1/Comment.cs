@@ -2,28 +2,26 @@
 
 public class Comment
 {
-    private string _name;
-    private string _comment;
-    private string _count;
-    public Comment(string name, string comment){
-        _name = name;
-        _comment = comment;
+  
+    private List<string> _name;
+    private List<string> _comment;
+    private int _amount;
+    
+
+    public Comment(List<string> comment, List<string> name){
+       _name = name;
+      _comment = comment;
     }
 
-    public Comment()
+    public List<string> Transfer()
     {
-        _name = string.Empty;
-        _comment = string.Empty;
+    
+        return _comment;
     }
-
-    public string Display()
+    
+    public string Display(int NumberIterate)
     {
-        int commentCount = 0;
-        foreach (var word in _comment.Split(' '))
-        {
-            commentCount = word.Count();
-        }
-        _count = commentCount.ToString();
-        return$"{_count}";
+        _amount = NumberIterate;
+        return $"Comment Name:{_name[_amount] + " -- " + _comment[_amount]}\n";
     }
 }

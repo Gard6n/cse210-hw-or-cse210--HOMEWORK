@@ -12,12 +12,13 @@ class Program
         List<string> author = new List<string>(){"Dj Big Mac","AppleLabs","Abe James"};
         List<int> videoLength = new List<int>(){3,6,4};
         
-        Comment comment = new Comment();
-        Video Vid = new(title, author, videoLength);
-        Video Vid2 = new(VidComs, ComsNames);
+        Comment Com = new Comment(VidComs, ComsNames);
+        Video Vid = new(Com, title, author, videoLength);
+       
         for (int i = 0; i < videoLength.Count; i++)
         {
             Console.WriteLine(Vid.Display(i));
+            Console.WriteLine(Com.Display(i));
         }
         
     }
