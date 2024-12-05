@@ -1,4 +1,4 @@
-using System;
+namespace Develop05;
 
 class Program
 {
