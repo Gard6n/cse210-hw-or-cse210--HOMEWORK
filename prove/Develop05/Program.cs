@@ -24,19 +24,17 @@ class Program
                 case 1:
                     Console.Clear();
                     ReflectingActivity reflect1 = new();
-                    Console.WriteLine("Welcome to the Reflecting Activity!");
-                    reflect1.DisplayStartingMessage();
-                    Console.WriteLine();
-                    Console.WriteLine("Enter How how you would like to reflect");
-                    int time = Convert.ToInt32(Console.ReadLine());
-                    reflect1.DurationSet(time);
-                    
+                    reflect1.Run();
                     break;
                 case 2:
                     Console.Clear();
+                    BreathingActivity breath1 = new();
+                    breath1.Run();
                     break;
                 case 3:
                     Console.Clear();
+                    ListingActivity list1 = new();
+                    list1.Run();
                     break;
                 case 5:
                     programExit = true;
