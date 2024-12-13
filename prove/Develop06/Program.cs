@@ -1,9 +1,11 @@
 using System;
+using Develop06;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop06 World!");
+        GoalManager Menu = new();
+        Menu.Start();
     }
 }
