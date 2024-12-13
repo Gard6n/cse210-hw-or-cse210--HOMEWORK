@@ -14,7 +14,7 @@ public Activity()
 	_description = "";
 	_duration = 0;
 }
-// This is for getting setting the value that the user as enter in
+	// This is for getting setting the value that the user as enter in
 public void DurationSet(int duration)
 {
 	_duration = duration;
