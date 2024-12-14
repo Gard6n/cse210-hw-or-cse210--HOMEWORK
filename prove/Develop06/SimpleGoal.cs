@@ -4,18 +4,16 @@ public class SimpleGoal : Goal
 {
     private bool _isComplete;
 
-    public SimpleGoal(string name, string description, int points) : base(name, description, points)
+    public SimpleGoal(string name, string description, int points, bool Complete) : base(name, description, points)
     {
-        _isComplete = false;
+        _isComplete = Complete;
     }
-
     public override void RecordEvent()
     {
         Console.WriteLine($"Congratulations!! You have earned {GetPoints()} points!");
         Console.WriteLine($"You now have {GetPoints()} points!");
         _isComplete = true;
     }
-
     public override bool isComplete()
     {
         return _isComplete;
@@ -23,6 +21,15 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+       return $"SimpleGoal,{GetShortName()},{GetDetialsString()},{GetPoints()},{isComplete()}";
+    }
+
+    public override void MakeGoal(bool complete, int points, string name, string description,string name_create)
+    {
+        if(name_create == "SimpleGoal")
+        _isComplete = complete;
+        _points = points;
+        _shortName = name;
+        _description = description;
     }
 }

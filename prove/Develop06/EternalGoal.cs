@@ -8,16 +8,28 @@ public class EternalGoal : Goal
 
     public override void RecordEvent()
     {
-        throw new NotImplementedException();
+        Console.WriteLine($"Congratulations!! You have earned {GetPoints()} points!"); 
+        Console.WriteLine($"You now have {GetPoints()} points!");
     }
 
     public override bool isComplete()
     {
-        throw new NotImplementedException();
+        return false;
     }
 
     public override string GetStringRepresentation()
     {
-        throw new NotImplementedException();
+        return $"EternalGoal,{GetShortName()},{GetDetialsString()},{GetPoints()}";
+    }
+
+    public override void MakeGoal(bool complete, int points, string name, string description,string name_create)
+    {
+        if (name_create == "EternalGoal")
+        {
+            _points = points;
+            _shortName = name;
+            _description = description;
+        }
+       
     }
 }
