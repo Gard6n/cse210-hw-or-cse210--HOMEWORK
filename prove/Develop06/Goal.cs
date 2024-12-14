@@ -15,7 +15,6 @@ public abstract class Goal
     public abstract void RecordEvent();
     public abstract bool isComplete();
     public abstract string GetStringRepresentation();
-    public abstract void MakeGoal(bool complete, int points, string name, string description,string name_create);
     public virtual string GetDetialsString()
     {
         return _description;

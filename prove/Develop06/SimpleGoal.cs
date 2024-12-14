@@ -23,13 +23,4 @@ public class SimpleGoal : Goal
     {
        return $"SimpleGoal,{GetShortName()},{GetDetialsString()},{GetPoints()},{isComplete()}";
     }
-
-    public override void MakeGoal(bool complete, int points, string name, string description,string name_create)
-    {
-        if(name_create == "SimpleGoal")
-        _isComplete = complete;
-        _points = points;
-        _shortName = name;
-        _description = description;
-    }
 }

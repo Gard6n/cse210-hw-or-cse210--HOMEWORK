@@ -21,15 +21,4 @@ public class EternalGoal : Goal
     {
         return $"EternalGoal,{GetShortName()},{GetDetialsString()},{GetPoints()}";
     }
-
-    public override void MakeGoal(bool complete, int points, string name, string description,string name_create)
-    {
-        if (name_create == "EternalGoal")
-        {
-            _points = points;
-            _shortName = name;
-            _description = description;
-        }
-       
-    }
 }

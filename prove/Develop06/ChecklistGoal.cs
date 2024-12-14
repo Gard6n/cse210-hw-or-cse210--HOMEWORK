@@ -61,9 +61,4 @@ public class ChecklistGoal : Goal
 
         return the_points;
     }
-    
-    public override void MakeGoal(bool complete, int points, string name, string description,string name_create)
-    {
-        throw new NotImplementedException();
-    }
 }
