@@ -31,14 +31,7 @@ public abstract class Activity
       double _pace = _time / _distance;
       return _pace.ToString();
    }
-
-   public string Pace_In_Meters()
-   {
-      _time = _time / 60;
-      double _pace = _distance / _time;
-      return _pace.ToString();
-   }
-
+   
    public double TimeGet()
    {
       return _time;
