@@ -85,7 +85,7 @@ public class GoalManager
         }
     }
     
-    // Need to finish this
+
     public void Create_Goal()
     {
         Console.Clear();
